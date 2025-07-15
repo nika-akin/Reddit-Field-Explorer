@@ -53,18 +53,24 @@ st.markdown("""
         background-color: transparent !important;
     }
     </style>
-    <div style="background-color: #f1f3f6; padding: 20px; border-radius: 12px; margin-top: 30px;">
-    <h3 style="margin-bottom: 10px;">📬 Contact the Authors</h3>
-    <p>We’d love to hear your feedback, suggestions, or questions!</p>
-    <ul style="line-height: 1.8;">
-        <li><b>Email:</b> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-        <li><b>GitHub:</b> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
-        <li><b>Twitter:</b> <a href="https://twitter.com/yourhandle" target="_blank">@yourhandle</a></li>
-    </ul>
-</div>
+    
 """, unsafe_allow_html=True)
 
 
+st.markdown(
+    """
+    <div style="background-color: #f1f3f6; padding: 20px; border-radius: 12px; margin-top: 30px;">
+        <h3 style="margin-bottom: 10px;">📬 Contact the Authors</h3>
+        <p>We’d love to hear your feedback, suggestions, or questions!</p>
+        <ul style="line-height: 1.8;">
+            <li><b>Email:</b> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li><b>GitHub:</b> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+            <li><b>Twitter:</b> <a href="https://twitter.com/yourhandle" target="_blank">@yourhandle</a></li>
+        </ul>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
 
