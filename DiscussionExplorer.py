@@ -86,7 +86,7 @@ st.markdown("""
         }
 
         .stTabs [data-baseweb="tab"] {
-            padding: 6px 12px;
+            padding: 10px 12px;
             font-size: 1rem;
         }
 
