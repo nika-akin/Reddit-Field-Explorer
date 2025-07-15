@@ -279,7 +279,7 @@ with tab1:
     """)
 
     st.markdown("---")
-    st.markdown("## 🔧 Comment Settings")
+    st.markdown("## Comment Settings 🔧")
     map_to_size = ['comment length', 'comment toxicity']
     size_map = st.selectbox("What should be mapped to node size?", map_to_size)
     with_score = st.checkbox("Include Vote Score", value=False)
@@ -518,7 +518,7 @@ with tab3:
     - 🔁 **Transition matrix** based on actual changes between pre and post  
     - 🟥 **Post-discussion attitudes**
     
-    🔧 Use the controls to simulate how opinions might evolve if these dynamics continue over time.
+    🎚️ Use the controls to simulate how opinions might evolve if these dynamics continue over time.
     
     You can:
     - Step forward one time unit at a time
@@ -622,7 +622,7 @@ with tab3:
     # Interactive Controls
     col1, col2 = st.columns([1, 2])
     with col1:
-        st.markdown("### 🔧 Evolution Controls")
+        st.markdown("### Evolution Controls 🎚️")
         st.markdown('#### Step-by-Step')
         # Initialize session state on first load
         if "step_count" not in st.session_state:
