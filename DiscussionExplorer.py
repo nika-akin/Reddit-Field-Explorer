@@ -13,109 +13,47 @@ import os
 ##################################################################
 ##  Visual Settings
 
+st.set_page_config(layout="wide", page_title="Reddit Opinion Dynamics")
+
+# Custom CSS for Responsive and Desktop + Mobile Optimization
+# Custom CSS for Responsive and Desktop + Mobile Optimization
 st.markdown("""
-<style>
-/* --- Tabs Styling --- */
-.stTabs [data-baseweb="tab-list"] button {
-    font-size: 18px;
-    font-weight: 600;
-    padding: 15px;
-    border-radius: 8px;
-    margin-right: 10px;
-    transition: background-color 0.3s ease;
-}
-
-.stTabs [data-baseweb="tab-list"] button:hover {
-    background-color: #f0f0f0;
-    cursor: pointer;
-}
-
-.stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
-    background-color: #0072bb;
-    color: white;
-    border: 1px solid #0072bb;
-}
-
-/* --- Improve general typography --- */
-div[data-testid="stMarkdownContainer"] p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
-
-/* --- Main padding (fix clutter near title) --- */
-.block-container {
-    padding-top: 3rem;
-    padding-bottom: 2rem;
-}
-
-/* --- Light grey background container for structure (desktop) --- */
-@media (min-width: 768px) {
-    .stColumn:first-child {
-        background-color: #f8f9fa;
-        padding: 25px 20px;
-        border-radius: 12px;
-        box-shadow: 0 0 8px rgba(0,0,0,0.08);
-    }
-}
-
-/* --- Mobile Layout Fixes --- */
-@media (max-width: 767px) {
-    [data-testid="stSidebar"] {
-        width: 100% !important;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: #f8f9fa;
-        padding: 15px;
-        box-shadow: none;
+    <style>
+    /* Remove background from empty containers or default blocks */
+    [data-testid="stVerticalBlock"] {
+        background: none !important;
+        box-shadow: none !important;
     }
 
-    [data-testid="stSidebarContent"] {
-        width: 100% !important;
-        margin-top: 0;
+    /* Clean matplotlib or other figures if they're inside default containers */
+    .element-container:has(canvas), .element-container:has(svg) {
+        background-color: transparent !important;
+        box-shadow: none !important;
     }
 
-    .stColumn {
-        width: 100% !important;
-        padding: 15px;
+    /* Remove default padding from figure containers that create ghost boxes */
+    .element-container {
+        padding: 0px !important;
+        margin: 0px !important;
     }
 
-    .stTabs [data-baseweb="tab-list"] button {
-        width: 100% !important;
-        font-size: 20px;
+    /* Optional: make expander body clean */
+    .stExpanderContent {
+        background-color: transparent !important;
     }
-}
 
-/* --- Remove unwanted grey boxes --- */
-[data-testid="stVerticalBlock"] {
-    background: none !important;
-    box-shadow: none !important;
-}
+    /* Optional: zero padding around charts if not needed */
+    .block-container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
 
-.element-container:has(canvas), .element-container:has(svg), iframe, .stHtml {
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
-
-.element-container {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-.stExpanderContent {
-    background-color: transparent !important;
-}
-
-/* --- Optional: subtle frame for tab content --- */
-.stTabs [role="tabpanel"] {
-    margin-top: 1.5rem;
-    padding: 1rem;
-    border-radius: 12px;
-}
-
-</style>
+    /* Fix unwanted grey box in Pyvis/HTML display */
+    iframe, .stHtml {
+        background-color: transparent !important;
+    }
+    </style>
 """, unsafe_allow_html=True)
-
 
 
 
