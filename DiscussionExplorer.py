@@ -18,58 +18,81 @@ st.set_page_config(layout="wide", page_title="Reddit Opinion Dynamics")
 # Custom CSS for Responsive and Desktop + Mobile Optimization
 # Custom CSS for Responsive and Desktop + Mobile Optimization
 st.markdown("""
-    <style>
-    /* Remove background from empty containers or default blocks */
-    [data-testid="stVerticalBlock"] {
-        background: none !important;
-        box-shadow: none !important;
-    }
+<style>
+/* 🌐 Global layout constraints */
+.block-container {
+    padding: 2rem 3rem !important;
+    max-width: 1200px;
+    margin: auto;
+}
 
-    /* Clean matplotlib or other figures if they're inside default containers */
-    .element-container:has(canvas), .element-container:has(svg) {
-        background-color: transparent !important;
-        box-shadow: none !important;
-    }
+/* 🧱 Container cleanup */
+[data-testid="stVerticalBlock"], .element-container {
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
 
-    /* Remove default padding from figure containers that create ghost boxes */
-    .element-container {
-        padding: 0px !important;
-        margin: 0px !important;
-    }
+/* 📊 Plot and chart containers */
+.element-container:has(canvas), .element-container:has(svg),
+iframe, .stHtml {
+    background-color: transparent !important;
+}
 
-    /* Optional: make expander body clean */
-    .stExpanderContent {
-        background-color: transparent !important;
-    }
+/* 🎛️ Expander body */
+.stExpanderContent {
+    background-color: transparent !important;
+    padding: 0.5rem 1rem;
+}
 
-    /* Optional: zero padding around charts if not needed */
+/* 📑 Tab Styling */
+.stTabs [data-baseweb="tab-list"] {
+    justify-content: start;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.stTabs [data-baseweb="tab-list"] button {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    padding: 10px 18px !important;
+    margin: 4px 8px 0 0 !important;
+    border-radius: 10px !important;
+    background-color: #f0f2f6 !important;
+    color: #333 !important;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
+    background-color: #0072bb !important;
+    color: #fff !important;
+}
+
+/* 📐 Improve spacing between columns */
+.css-1r6slb0 > div {
+    gap: 2rem !important;
+}
+
+/* 📱 Responsive spacing for mobile */
+@media (max-width: 768px) {
     .block-container {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding: 1rem !important;
     }
 
-    /* Fix unwanted grey box in Pyvis/HTML display */
-    iframe, .stHtml {
-        background-color: transparent !important;
-    }
-
-    /* 🔠 Bigger font and better styling for tab labels */
     .stTabs [data-baseweb="tab-list"] button {
-        font-size: 20px !important;
-        font-weight: 600 !important;
-        padding: 12px 18px !important;
-        margin-right: 8px;
-        border-radius: 8px;
-        transition: all 0.2s ease;
+        width: 100% !important;
+        font-size: 16px !important;
     }
 
-    .stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
-        background-color: #0072bb !important;
-        color: white !important;
+    .css-1r6slb0 > div {
+        gap: 1rem !important;
     }
-
-    </style>
+}
+</style>
 """, unsafe_allow_html=True)
+
 
 st.markdown(
     """
@@ -163,7 +186,7 @@ st.markdown(
     </style>
 
     <div class="contact-card">
-        <h3>📬 Welcome to the Reddit Explorer </h3>
+        <h3> Welcome to the Reddit Explorer </h3>
         <p>We’d love to hear your feedback, suggestions, or questions. Reach out to us directly:</p>
         <ul>
             <li>📧 <a href="mailto:veronika.batzdorfer@kit.edu">veronika.batzdorfer@kit.edu</a></li>
