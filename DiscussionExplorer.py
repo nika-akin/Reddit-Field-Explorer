@@ -79,8 +79,15 @@ topics_survey = ['issue_attitudes_ukraine','issue_attitudes_renewable','issue_at
 st.title("🧠 Reddit Opinion Dynamics Explorer")
 
 # Sidebar: Global Controls
+#st.sidebar.header("🔧 Experiment Controls")
+#selected_subreddits = st.sidebar.multiselect("Select Subreddit", subreddits,default=subreddits[0])
+#selected_topic = st.sidebar.radio("Select Topic", topics)
+
 with st.expander("🔧 Experiment Controls", expanded=False):
+    st.subheader("Choose Subreddit(s)")
     selected_subreddits = st.multiselect("Select Subreddit", subreddits, default=subreddits[0])
+
+    st.subheader("Choose Topic")
     selected_topic = st.radio("Select Topic", topics)
 
 
