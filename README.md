@@ -20,7 +20,7 @@ https://reddit-field-explorer.streamlit.app/
 
 ## Dataset
 
-The app expects three CSV files located in the `data/` folder:
+The app expects [data](https://osf.io/m8g4x/) from three CSV files located in the `data/` folder:
 - `discussions_anon.csv`: Contains Reddit comments and metadata.
 - `pre_survey_anon.csv`: Pre-discussion survey results.
 - `post_surveys_anon.csv`: Post-discussion survey results.
