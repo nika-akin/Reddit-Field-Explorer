@@ -16,84 +16,83 @@ import os
 st.set_page_config(layout="wide", page_title="Reddit Opinion Dynamics")
 
 # Custom CSS for Responsive and Desktop + Mobile Optimization
+# Custom CSS for Responsive and Desktop + Mobile Optimization
 st.markdown("""
     <style>
-    /* Title and subtitle spacing */
-    h1 {
-        margin-bottom: 0.75rem !important;
-    }
-    h2, h3 {
-        margin-top: 1.5rem !important;
-        margin-bottom: 0.5rem !important;
-    }
-
-    /* General spacing */
-    .block-container {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
-
-    /* Expander-style sidebar panel */
-    .custom-control-panel {
-        background-color: #f7f7f9;
-        padding: 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        margin-bottom: 2rem;
-    }
-
-    /* Tabs visual polish */
-    .stTabs [data-baseweb="tab-list"] {
-        flex-wrap: wrap;
-        gap: 8px;
-        justify-content: start;
-    }
-
-    .stTabs [data-baseweb="tab"] {
-        border: 2px solid transparent;
+    /* Tab Styling */
+    .stTabs [data-baseweb="tab-list"] button {
+        font-size: 18px;
+        font-weight: 600;
+        padding: 15px;
         border-radius: 8px;
-        padding: 8px 16px;
-        font-size: 1.1rem;
-        font-weight: 500;
-        background-color: #f0f2f6;
-        color: #333;
-        transition: all 0.3s ease;
+        margin-right: 10px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .stTabs [data-baseweb="tab-list"] button:hover {
+        background-color: #f0f0f0;
+        cursor: pointer;
     }
 
-    .stTabs [data-baseweb="tab"]:hover {
-        border-color: #66a3ff;
-        background-color: #e6f0ff;
+    .stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
+        background-color: #0072bb;
+        color: white;
+        border: 1px solid #0072bb;
     }
 
-    .stTabs [aria-selected="true"] {
-        border-color: #1a73e8;
-        background-color: #e6f0ff;
-        font-weight: 700;
-        color: #1a73e8;
-    }
-
-    /* Markdown content spacing */
+    /* Increase all Markdown paragraph text across the app */
     div[data-testid="stMarkdownContainer"] p {
-        font-size: 1.05rem;
+        font-size: 1.2rem;
         line-height: 1.6;
-        margin-bottom: 0.75rem;
     }
 
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-        .stTabs [data-baseweb="tab-list"] {
-            justify-content: center;
+    /* Adjust sidebar width */
+    [data-testid="stSidebar"] {
+        width: 450px !important;
+    }
+    
+    [data-testid="stSidebarContent"] {
+        width: 400px !important;
+    }
+
+    /* Mobile: Stack the columns vertically and adjust sidebar width */
+    @media (max-width: 767px) {
+        [data-testid="stSidebar"] {
+            width: 100% !important;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #f8f9fa;
+            padding: 15px;
+            box-shadow: none;
+        }
+        [data-testid="stSidebarContent"] {
+            width: 100% !important;
+            margin-top: 0;
+        }
+        
+        /* Make content areas stack vertically */
+        .stColumn {
+            width: 100% !important;
+            padding: 15px;
         }
 
-        .stTabs [data-baseweb="tab"] {
-            padding: 10px 12px;
-            font-size: 1rem;
-        }
-
-        .custom-control-panel {
-            padding: 1rem;
+        .stTabs [data-baseweb="tab-list"] button {
+            width: 100% !important;
+            font-size: 20px;
         }
     }
+
+    /* Desktop: Adjust content column */
+    @media (min-width: 768px) {
+        .stColumn:first-child {
+            background-color: #f8f9fa;
+            padding: 20px 15px;
+            border-radius: 12px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.1);
+        }
+    }
+
     </style>
 """, unsafe_allow_html=True)
 
