@@ -29,6 +29,7 @@ The app expects [experimental data](https://osf.io/m8g4x/) in the `data/` folder
 
 
 📬 Contact & Feedback
+
 The project was funded by the EU Horizon Project [SoMe4Dem](https://some4dem.eu/) by the European Commission.
 
 We’d love to hear your suggestions or questions:
