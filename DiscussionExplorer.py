@@ -49,22 +49,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.markdown("""
-    <style>
-    /* Shrink font a bit for mobile readability */
-    html, body, [class*="css"] {
-        font-size: 14px !important;
-    }
-    /* Make expanders take full width */
-    .stExpander {
-        width: 100% !important;
-    }
-    /* Prevent horizontal overflow */
-    iframe {
-        max-width: 100%;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
 
 
@@ -95,9 +79,9 @@ topics_survey = ['issue_attitudes_ukraine','issue_attitudes_renewable','issue_at
 st.title("🧠 Reddit Opinion Dynamics Explorer")
 
 # Sidebar: Global Controls
-st.sidebar.header("🔧 Experiment Controls")
-selected_subreddits = st.sidebar.multiselect("Select Subreddit", subreddits,default=subreddits[0])
-selected_topic = st.sidebar.radio("Select Topic", topics)
+with st.expander("🔧 Experiment Controls", expanded=False):
+    selected_subreddits = st.multiselect("Select Subreddit", subreddits, default=subreddits[0])
+    selected_topic = st.radio("Select Topic", topics)
 
 
 
