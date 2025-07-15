@@ -169,8 +169,14 @@ st.markdown(
             <li>📧 <a href="mailto:veronika.batzdorfer@kit.edu">veronika.batzdorfer@kit.edu</a></li>
             <li>📧 <a href="mailto:sven.banisch@kit.edu">sven.banisch@kit.edu</a></li>
             <li>📧 <a href="mailto:oswald@mpib-berlin.mpg.de">oswald@mpib-berlin.mpg.de</a></li>
-            <li>:octocat: <a href="https://github.com/lfoswald/reddit-discussion-field-experiment" target="_blank">GitHub: Reddit Field Experiment</a></li>
-        </ul>
+            <li>
+               <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+                    alt="GitHub" style="height: 18px; vertical-align: middle; margin-right: 6px;">
+               <a href="https://github.com/lfoswald/reddit-discussion-field-experiment" target="_blank">
+                   GitHub: Reddit Field Experiment
+               </a>
+           </li>
+       </ul>
     </div>
     """,
     unsafe_allow_html=True
