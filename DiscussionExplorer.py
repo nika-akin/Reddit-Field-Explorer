@@ -18,7 +18,31 @@ st.set_page_config(layout="wide", page_title="Reddit Opinion Dynamics")
 # Custom CSS for Responsive and Desktop + Mobile Optimization
 st.markdown("""
     <style>
-    /* GENERAL TAB STYLING */
+    /* Title and subtitle spacing */
+    h1 {
+        margin-bottom: 0.75rem !important;
+    }
+    h2, h3 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* General spacing */
+    .block-container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    /* Expander-style sidebar panel */
+    .custom-control-panel {
+        background-color: #f7f7f9;
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        margin-bottom: 2rem;
+    }
+
+    /* Tabs visual polish */
     .stTabs [data-baseweb="tab-list"] {
         flex-wrap: wrap;
         gap: 8px;
@@ -48,7 +72,14 @@ st.markdown("""
         color: #1a73e8;
     }
 
-    /* IMPROVE MOBILE RESPONSIVENESS */
+    /* Markdown content spacing */
+    div[data-testid="stMarkdownContainer"] p {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+    }
+
+    /* Mobile responsiveness */
     @media (max-width: 768px) {
         .stTabs [data-baseweb="tab-list"] {
             justify-content: center;
@@ -58,10 +89,14 @@ st.markdown("""
             padding: 6px 12px;
             font-size: 1rem;
         }
-    }
 
+        .custom-control-panel {
+            padding: 1rem;
+        }
+    }
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
