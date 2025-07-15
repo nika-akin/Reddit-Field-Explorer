@@ -163,13 +163,13 @@ st.markdown(
     </style>
 
     <div class="contact-card">
-        <h3>📬 Welcome to the Reddit Experiment Explorer </h3>
+        <h3>📬 Welcome to the Reddit Explorer </h3>
         <p>We’d love to hear your feedback, suggestions, or questions. Reach out to us directly:</p>
         <ul>
             <li>📧 <a href="mailto:veronika.batzdorfer@kit.edu">veronika.batzdorfer@kit.edu</a></li>
             <li>📧 <a href="mailto:sven.banisch@kit.edu">sven.banisch@kit.edu</a></li>
             <li>📧 <a href="mailto:oswald@mpib-berlin.mpg.de">oswald@mpib-berlin.mpg.de</a></li>
-            <li>💻 <a href="https://github.com/lfoswald/reddit-discussion-field-experiment" target="_blank">GitHub: Reddit Field Explorer</a></li>
+            <li>:octocat: <a href="https://github.com/lfoswald/reddit-discussion-field-experiment" target="_blank">GitHub: Reddit Field Experiment</a></li>
         </ul>
     </div>
     """,
