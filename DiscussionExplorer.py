@@ -279,7 +279,7 @@ with tab1:
     """)
 
     st.markdown("---")
-    st.markdown("## Comment Settings 🔧")
+    st.markdown("## Comment Settings 🎚️")
     map_to_size = ['comment length', 'comment toxicity']
     size_map = st.selectbox("What should be mapped to node size?", map_to_size)
     with_score = st.checkbox("Include Vote Score", value=False)
