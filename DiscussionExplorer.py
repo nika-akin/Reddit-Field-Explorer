@@ -134,14 +134,17 @@ st.title("🧠 Reddit Opinion Dynamics Explorer")
 #selected_subreddits = st.sidebar.multiselect("Select Subreddit", subreddits,default=subreddits[0])
 #selected_topic = st.sidebar.radio("Select Topic", topics)
 
-# --- Layout: Sidebar-style controls + Tabs ---
-col1, col2 = st.columns([1, 3])  # Left column (smaller) for controls, right column (larger) for content
+with st.container():
+    with st.expander("🔧 Experiment Controls", expanded=False):
+        st.markdown('<div class="custom-control-panel">', unsafe_allow_html=True)
 
-# Left column (controls)
-with col1:
-    st.markdown("### 🔧 Experiment Controls")
-    selected_subreddits = st.multiselect("Choose Subreddit(s)", subreddits, default=subreddits[0])
-    selected_topic = st.radio("Choose Topic", topics)
+        st.subheader("Choose Subreddit(s)")
+        selected_subreddits = st.multiselect("Select Subreddit(s)", subreddits, default=subreddits[0])
+
+        st.subheader("Choose Topic")
+        selected_topic = st.radio("Select Topic", topics)
+
+        st.markdown('</div>', unsafe_allow_html=True)
 
 # Right column (main content)
 with col2:
