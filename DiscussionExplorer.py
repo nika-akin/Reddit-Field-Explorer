@@ -73,6 +73,22 @@ st.markdown("""
 
 
 
+st.markdown(
+    """
+    <div style="background-color: #f1f3f6; padding: 20px; border-radius: 12px; margin-top: 30px;">
+        <h3 style="margin-bottom: 10px;">📬 Contact the Authors</h3>
+        <p>We’d love to hear your feedback, suggestions, or questions!</p>
+        <ul style="line-height: 1.8;">
+            <li><b>Email:</b> <a href="mailto:your.email@example.com">veronika.batzdorfer@kit.edu</a></li>
+            <li><b>Email:</b> <a href="mailto:your.email@example.com">sven.banisch@kit.edu</a></li>
+            <li><b>Email:</b> <a href="mailto:your.email@example.com">oswald@mpib-berlin.mpg.de</a></li>
+            <li><b>GitHub:</b> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+            
+        </ul>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
 
@@ -103,22 +119,6 @@ topics_survey = ['issue_attitudes_ukraine','issue_attitudes_renewable','issue_at
 
 st.title("🧠 Reddit Opinion Dynamics Explorer")
 
-st.markdown(
-    """
-    <div style="background-color: #f1f3f6; padding: 20px; border-radius: 12px; margin-top: 30px;">
-        <h3 style="margin-bottom: 10px;">📬 Contact the Authors</h3>
-        <p>We’d love to hear your feedback, suggestions, or questions!</p>
-        <ul style="line-height: 1.8;">
-            <li><b>Email:</b> <a href="mailto:your.email@example.com">veronika.batzdorfer@kit.edu</a></li>
-            <li><b>Email:</b> <a href="mailto:your.email@example.com">sven.banisch@kit.edu</a></li>
-            <li><b>Email:</b> <a href="mailto:your.email@example.com">oswald@mpib-berlin.mpg.de</a></li>
-            <li><b>GitHub:</b> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
-            
-        </ul>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
 
 
 # Sidebar: Global Controls
