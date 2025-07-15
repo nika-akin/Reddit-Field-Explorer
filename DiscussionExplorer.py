@@ -75,20 +75,67 @@ st.markdown("""
 
 st.markdown(
     """
-    <div style="background-color: #f1f3f6; padding: 20px; border-radius: 12px; margin-top: 30px;">
-        <h3 style="margin-bottom: 10px;">📬 Welcome to the Reddit Explorer </h3>
-        <p>We’d love to hear your feedback, suggestions, or questions!</p>
-        <ul style="line-height: 1.8;">
-            <li><b>Email:</b> <a href="mailto:your.email@example.com">veronika.batzdorfer@kit.edu</a></li>
-            <li><b>Email:</b> <a href="mailto:your.email@example.com">sven.banisch@kit.edu</a></li>
-            <li><b>Email:</b> <a href="mailto:your.email@example.com">oswald@mpib-berlin.mpg.de</a></li>
-            <li><b>GitHub:</b> <a href="https://github.com/yourusername" target="_blank">https://github.com/nika-akin/Reddit-Field-Explorer</a></li>
-            
+    <style>
+    .contact-card {
+        background-color: #f9fafc;
+        padding: 24px;
+        border-radius: 12px;
+        margin-top: 40px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .contact-card:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .contact-card h3 {
+        margin-bottom: 12px;
+        color: #1a1a1a;
+        font-size: 24px;
+    }
+
+    .contact-card p {
+        font-size: 1.05rem;
+        margin-bottom: 16px;
+        color: #333;
+    }
+
+    .contact-card ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .contact-card li {
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+
+    .contact-card a {
+        color: #0072bb;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .contact-card a:hover {
+        text-decoration: underline;
+    }
+    </style>
+
+    <div class="contact-card">
+        <h3>📬 Get in Touch with the Authors</h3>
+        <p>We’d love to hear your feedback, suggestions, or questions. Reach out to us directly:</p>
+        <ul>
+            <li>📧 <a href="mailto:veronika.batzdorfer@kit.edu">veronika.batzdorfer@kit.edu</a></li>
+            <li>📧 <a href="mailto:sven.banisch@kit.edu">sven.banisch@kit.edu</a></li>
+            <li>📧 <a href="mailto:oswald@mpib-berlin.mpg.de">oswald@mpib-berlin.mpg.de</a></li>
+            <li>💻 <a href="https://github.com/nika-akin/Reddit-Field-Explorer" target="_blank">GitHub: Reddit Field Explorer</a></li>
         </ul>
     </div>
     """,
     unsafe_allow_html=True
 )
+
 
 
 
