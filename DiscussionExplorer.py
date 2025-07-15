@@ -7,6 +7,8 @@ from pyvis.network import Network
 import matplotlib.pyplot as plt
 import seaborn as sns
 import time
+import tempfile
+import os
 
 ##################################################################
 ##  Visual Settings
@@ -183,15 +185,20 @@ with tab1:
             # Check if graph has nodes and edges
             if graph.nodes:
                 net.from_nx(graph)
-                html_file = f"graph_topic_{i}.html"
-                net.save_graph(html_file)
+                
+                with tempfile.NamedTemporaryFile('w+', delete=False, suffix='.html') as tmp_file:
+                  net.save_graph(tmp_file.name)
+                  tmp_file.seek(0)
+                  html_content = tmp_file.read()
 
                 # Display graph
-                with open(html_file, 'r', encoding='utf-8') as f:
-                    html_content = f.read()
-                    components.html(html_content, height=650, scrolling=True)
+                components.html(html_content, height=650, scrolling=True)
+                os.remove(tmp_file.name)
+
+                    
             else:
                 st.write(f"No graph generated for {selected_topic}.")
+
 
 
 ##################################################################
