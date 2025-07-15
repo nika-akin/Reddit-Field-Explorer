@@ -231,10 +231,10 @@ topics_survey = ['issue_attitudes_ukraine','issue_attitudes_renewable','issue_at
 
 
 
-
+st.markdown("---")
 
 st.title("Reddit Opinion Dynamics Explorer")
-
+st.markdown("---")
 
 
 # Sidebar: Global Controls
