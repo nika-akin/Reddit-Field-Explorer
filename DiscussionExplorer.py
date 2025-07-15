@@ -151,7 +151,7 @@ with st.container():
 
 
 # Main Tabs
-     tab1, tab2, tab3 = st.tabs(["🌳 Comment Trees", "📊 Participation", "📈 Opinion Dynamics"])
+    tab1, tab2, tab3 = st.tabs(["🌳 Comment Trees", "📊 Participation", "📈 Opinion Dynamics"])
 
 
 ##################################################################
