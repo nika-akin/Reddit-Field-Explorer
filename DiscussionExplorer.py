@@ -52,8 +52,23 @@ st.markdown("""
     iframe, .stHtml {
         background-color: transparent !important;
     }
+
+    /* 🔠 Bigger font and better styling for tab labels */
+    .stTabs [data-baseweb="tab-list"] button {
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        padding: 12px 18px !important;
+        margin-right: 8px;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
+        background-color: #0072bb !important;
+        color: white !important;
+    }
+
     </style>
-    
 """, unsafe_allow_html=True)
 
 
@@ -63,9 +78,9 @@ st.markdown(
         <h3 style="margin-bottom: 10px;">📬 Contact the Authors</h3>
         <p>We’d love to hear your feedback, suggestions, or questions!</p>
         <ul style="line-height: 1.8;">
-            <li><b>Email:</b> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li><b>Email:</b> <a href="mailto:veronika.batzdorfer@kit.edu">your.email@example.com</a></li>
             <li><b>GitHub:</b> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
-            <li><b>Twitter:</b> <a href="https://twitter.com/yourhandle" target="_blank">@yourhandle</a></li>
+            
         </ul>
     </div>
     """,
