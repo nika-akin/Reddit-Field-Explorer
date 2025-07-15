@@ -238,7 +238,7 @@ st.title("Reddit Opinion Dynamics Explorer")
 
 
 # Sidebar: Global Controls
-#st.sidebar.header("🔧 Experiment Controls")
+#st.sidebar.header("🎚️ Experiment Controls")
 #selected_subreddits = st.sidebar.multiselect("Select Subreddit", subreddits,default=subreddits[0])
 #selected_topic = st.sidebar.radio("Select Topic", topics)
 
@@ -247,7 +247,7 @@ col1, col2 = st.columns([1, 3])  # Left column (smaller) for controls, right col
 
 # Left column (controls)
 with col1:
-    st.markdown("### Experiment Controls 🔧")
+    st.markdown("### Experiment Controls 🎚️")
     selected_subreddits = st.multiselect("Choose Subreddit(s)", subreddits, default=subreddits[0])
     selected_topic = st.radio("Choose Topic", topics)
 
@@ -273,7 +273,7 @@ with tab1:
     
     You can compare multiple subreddits side by side.
     
-    🔧 **Advanced options** let you:
+    🎚️ **Advanced options** let you:
     - Scale node sizes by **comment length** or **toxicity**
     - Include **vote scores** to assess comment reception
     """)
