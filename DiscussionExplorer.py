@@ -19,82 +19,42 @@ st.set_page_config(layout="wide", page_title="Reddit Opinion Dynamics")
 # Custom CSS for Responsive and Desktop + Mobile Optimization
 st.markdown("""
     <style>
-    /* Tab Styling */
-    .stTabs [data-baseweb="tab-list"] button {
-        font-size: 18px;
-        font-weight: 600;
-        padding: 15px;
-        border-radius: 8px;
-        margin-right: 10px;
-        transition: background-color 0.3s ease;
-    }
-    
-    .stTabs [data-baseweb="tab-list"] button:hover {
-        background-color: #f0f0f0;
-        cursor: pointer;
+    /* Remove background from empty containers or default blocks */
+    [data-testid="stVerticalBlock"] {
+        background: none !important;
+        box-shadow: none !important;
     }
 
-    .stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
-        background-color: #0072bb;
-        color: white;
-        border: 1px solid #0072bb;
+    /* Clean matplotlib or other figures if they're inside default containers */
+    .element-container:has(canvas), .element-container:has(svg) {
+        background-color: transparent !important;
+        box-shadow: none !important;
     }
 
-    /* Increase all Markdown paragraph text across the app */
-    div[data-testid="stMarkdownContainer"] p {
-        font-size: 1.2rem;
-        line-height: 1.6;
+    /* Remove default padding from figure containers that create ghost boxes */
+    .element-container {
+        padding: 0px !important;
+        margin: 0px !important;
     }
 
-    /* Adjust sidebar width */
-    [data-testid="stSidebar"] {
-        width: 450px !important;
-    }
-    
-    [data-testid="stSidebarContent"] {
-        width: 400px !important;
+    /* Optional: make expander body clean */
+    .stExpanderContent {
+        background-color: transparent !important;
     }
 
-    /* Mobile: Stack the columns vertically and adjust sidebar width */
-    @media (max-width: 767px) {
-        [data-testid="stSidebar"] {
-            width: 100% !important;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: #f8f9fa;
-            padding: 15px;
-            box-shadow: none;
-        }
-        [data-testid="stSidebarContent"] {
-            width: 100% !important;
-            margin-top: 0;
-        }
-        
-        /* Make content areas stack vertically */
-        .stColumn {
-            width: 100% !important;
-            padding: 15px;
-        }
-
-        .stTabs [data-baseweb="tab-list"] button {
-            width: 100% !important;
-            font-size: 20px;
-        }
+    /* Optional: zero padding around charts if not needed */
+    .block-container {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 
-    /* Desktop: Adjust content column */
-    @media (min-width: 768px) {
-        .stColumn:first-child {
-            background-color: #f8f9fa;
-            padding: 20px 15px;
-            border-radius: 12px;
-            box-shadow: 0 0 6px rgba(0,0,0,0.1);
-        }
+    /* Fix unwanted grey box in Pyvis/HTML display */
+    iframe, .stHtml {
+        background-color: transparent !important;
     }
-
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
