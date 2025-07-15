@@ -49,6 +49,23 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown("""
+    <style>
+    /* Shrink font a bit for mobile readability */
+    html, body, [class*="css"] {
+        font-size: 14px !important;
+    }
+    /* Make expanders take full width */
+    .stExpander {
+        width: 100% !important;
+    }
+    /* Prevent horizontal overflow */
+    iframe {
+        max-width: 100%;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 
 
 ##################################################################
