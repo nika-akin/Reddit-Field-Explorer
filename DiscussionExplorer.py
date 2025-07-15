@@ -18,48 +18,51 @@ st.set_page_config(layout="wide", page_title="Reddit Opinion Dynamics")
 # Custom CSS for Responsive and Desktop + Mobile Optimization
 st.markdown("""
     <style>
-    /* Ensure the plot containers adjust dynamically */
-    .stPyPlot {
-        width: 100% !important;
-        height: auto !important;
-        margin: 0 auto !important;
-    }
-    
-    .stPyPlot > div {
-        height: 400px !important;  /* Adjust based on your plot size */
+    /* GENERAL TAB STYLING */
+    .stTabs [data-baseweb="tab-list"] {
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: start;
     }
 
-    .stComponent > div {
-        height: 600px !important;  /* Adjust for Pyvis graph or similar */
-        overflow: hidden;
+    .stTabs [data-baseweb="tab"] {
+        border: 2px solid transparent;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        background-color: #f0f2f6;
+        color: #333;
+        transition: all 0.3s ease;
     }
 
-    /* Ensure that the plot containers have transparent backgrounds */
-    .stPyPlot, .stComponent {
-        background-color: transparent !important;
-        overflow: visible !important;
+    .stTabs [data-baseweb="tab"]:hover {
+        border-color: #66a3ff;
+        background-color: #e6f0ff;
     }
 
-    .stComponent > div, .stPyPlot > div {
-        background-color: transparent !important;
-        border: none !important;
-        box-shadow: none !important;
+    .stTabs [aria-selected="true"] {
+        border-color: #1a73e8;
+        background-color: #e6f0ff;
+        font-weight: 700;
+        color: #1a73e8;
     }
 
-    /* Remove unnecessary margins/padding for plot containers */
-    .stComponent > div, .stPyPlot > div {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
+    /* IMPROVE MOBILE RESPONSIVENESS */
+    @media (max-width: 768px) {
+        .stTabs [data-baseweb="tab-list"] {
+            justify-content: center;
+        }
 
-    /* Ensure all important elements are in front (no hidden behind others) */
-    .stComponent, .stPyPlot {
-        z-index: 999 !important;
-        position: relative;
+        .stTabs [data-baseweb="tab"] {
+            padding: 6px 12px;
+            font-size: 1rem;
+        }
     }
 
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
