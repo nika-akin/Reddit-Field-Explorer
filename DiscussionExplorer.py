@@ -18,82 +18,49 @@ st.set_page_config(layout="wide", page_title="Reddit Opinion Dynamics")
 # Custom CSS for Responsive and Desktop + Mobile Optimization
 st.markdown("""
     <style>
-    /* Tab Styling */
-    .stTabs [data-baseweb="tab-list"] button {
-        font-size: 18px;
-        font-weight: 600;
-        padding: 15px;
-        border-radius: 8px;
-        margin-right: 10px;
-        transition: background-color 0.3s ease;
+    /* Ensure the plot containers adjust dynamically */
+    .stPyPlot {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 auto !important;
     }
     
-    .stTabs [data-baseweb="tab-list"] button:hover {
-        background-color: #f0f0f0;
-        cursor: pointer;
+    .stPyPlot > div {
+        height: 400px !important;  /* Adjust based on your plot size */
     }
 
-    .stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
-        background-color: #0072bb;
-        color: white;
-        border: 1px solid #0072bb;
+    .stComponent > div {
+        height: 600px !important;  /* Adjust for Pyvis graph or similar */
+        overflow: hidden;
     }
 
-    /* Increase all Markdown paragraph text across the app */
-    div[data-testid="stMarkdownContainer"] p {
-        font-size: 1.2rem;
-        line-height: 1.6;
+    /* Ensure that the plot containers have transparent backgrounds */
+    .stPyPlot, .stComponent {
+        background-color: transparent !important;
+        overflow: visible !important;
     }
 
-    /* Adjust sidebar width */
-    [data-testid="stSidebar"] {
-        width: 450px !important;
-    }
-    
-    [data-testid="stSidebarContent"] {
-        width: 400px !important;
+    .stComponent > div, .stPyPlot > div {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
     }
 
-    /* Mobile: Stack the columns vertically and adjust sidebar width */
-    @media (max-width: 767px) {
-        [data-testid="stSidebar"] {
-            width: 100% !important;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: #f8f9fa;
-            padding: 15px;
-            box-shadow: none;
-        }
-        [data-testid="stSidebarContent"] {
-            width: 100% !important;
-            margin-top: 0;
-        }
-        
-        /* Make content areas stack vertically */
-        .stColumn {
-            width: 100% !important;
-            padding: 15px;
-        }
-
-        .stTabs [data-baseweb="tab-list"] button {
-            width: 100% !important;
-            font-size: 20px;
-        }
+    /* Remove unnecessary margins/padding for plot containers */
+    .stComponent > div, .stPyPlot > div {
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
-    /* Desktop: Adjust content column */
-    @media (min-width: 768px) {
-        .stColumn:first-child {
-            background-color: #f8f9fa;
-            padding: 20px 15px;
-            border-radius: 12px;
-            box-shadow: 0 0 6px rgba(0,0,0,0.1);
-        }
+    /* Ensure all important elements are in front (no hidden behind others) */
+    .stComponent, .stPyPlot {
+        z-index: 999 !important;
+        position: relative;
     }
 
     </style>
 """, unsafe_allow_html=True)
+
 
 
 
