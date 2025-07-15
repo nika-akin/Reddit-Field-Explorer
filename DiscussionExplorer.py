@@ -147,7 +147,7 @@ with st.container():
         st.markdown('</div>', unsafe_allow_html=True)
 
 # Right column (main content)
-with col2:
+
 
 
 # Main Tabs
