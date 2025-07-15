@@ -233,7 +233,7 @@ topics_survey = ['issue_attitudes_ukraine','issue_attitudes_renewable','issue_at
 
 
 
-st.title("🧠 Reddit Opinion Dynamics Explorer")
+st.title("Reddit Opinion Dynamics Explorer")
 
 
 
@@ -247,7 +247,7 @@ col1, col2 = st.columns([1, 3])  # Left column (smaller) for controls, right col
 
 # Left column (controls)
 with col1:
-    st.markdown("### 🔧 Experiment Controls")
+    st.markdown("### Experiment Controls 🔧")
     selected_subreddits = st.multiselect("Choose Subreddit(s)", subreddits, default=subreddits[0])
     selected_topic = st.radio("Choose Topic", topics)
 
