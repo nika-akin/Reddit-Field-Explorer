@@ -85,7 +85,7 @@ st.title("🧠 Reddit Opinion Dynamics Explorer")
 
 with st.expander("🔧 Experiment Controls", expanded=False):
     st.subheader("Choose Subreddit(s)")
-    selected_subreddits = st.multiselect("Select Subreddit", subreddits, default=subreddits[0])
+    selected_subreddits = st.multiselect("Select Subreddit(s)", subreddits, default=subreddits[0])
 
     st.subheader("Choose Topic")
     selected_topic = st.radio("Select Topic", topics)
