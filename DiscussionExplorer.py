@@ -50,27 +50,7 @@ st.markdown(
 )
 
 
-st.markdown("""
-    <style>
-    /* Tidy up fonts and spacing */
-    html, body, [class*="css"] {
-        font-family: 'Segoe UI', sans-serif;
-    }
 
-    /* Make controls container visually distinct */
-    .stColumn:first-child {
-        background-color: #f5f5f5;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 0 8px rgba(0,0,0,0.05);
-    }
-
-    /* Prevent scroll overflow in components */
-    iframe {
-        max-width: 100%;
-    }
-    </style>
-""", unsafe_allow_html=True)
 
 
 ##################################################################
