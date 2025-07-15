@@ -72,21 +72,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.markdown(
-    """
-    <div style="background-color: #f1f3f6; padding: 20px; border-radius: 12px; margin-top: 30px;">
-        <h3 style="margin-bottom: 10px;">📬 Contact the Authors</h3>
-        <p>We’d love to hear your feedback, suggestions, or questions!</p>
-        <ul style="line-height: 1.8;">
-            <li><b>Email:</b> <a href="mailto:veronika.batzdorfer@kit.edu">your.email@example.com</a></li>
-            <li><b>GitHub:</b> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
-            
-        </ul>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
-
 
 
 
@@ -571,3 +556,18 @@ with tab3:
 
 
 
+
+st.markdown(
+    """
+    <div style="background-color: #f1f3f6; padding: 20px; border-radius: 12px; margin-top: 30px;">
+        <h3 style="margin-bottom: 10px;">📬 Contact the Authors</h3>
+        <p>We’d love to hear your feedback, suggestions, or questions!</p>
+        <ul style="line-height: 1.8;">
+            <li><b>Email:</b> <a href="mailto:veronika.batzdorfer@kit.edu">your.email@example.com</a></li>
+            <li><b>GitHub:</b> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+            
+
+    </div>
+    """,
+    unsafe_allow_html=True
+)
