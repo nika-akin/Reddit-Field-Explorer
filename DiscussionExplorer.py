@@ -56,9 +56,9 @@ st.markdown(
 
 @st.cache_data
 def load_data():
-    discussions_path = "../data/discussions_anon.csv"
-    pre_survey_path = "../data/pre_survey_anon.csv"
-    post_survey_path = "../data/post_surveys_anon.csv"
+    discussions_path = "data/discussions_anon.csv"
+    pre_survey_path = "data/pre_survey_anon.csv"
+    post_survey_path = "data/post_surveys_anon.csv"
     df_discussions = pd.read_csv(discussions_path)
     df_pre = pd.read_csv(pre_survey_path)
     df_post = pd.read_csv(post_survey_path)
