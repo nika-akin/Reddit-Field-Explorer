@@ -72,7 +72,7 @@ iframe, .stHtml {
 
 /* 📐 Improve spacing between columns */
 .css-1r6slb0 > div {
-    gap: 2rem !important;
+    gap: 4rem !important;
 }
 
 /* 📱 Responsive spacing for mobile */
