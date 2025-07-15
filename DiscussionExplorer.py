@@ -72,7 +72,7 @@ iframe, .stHtml {
 
 /* 📐 Improve spacing between columns */
 .css-1r6slb0 > div {
-    gap: 4rem !important;
+    gap: 2rem !important;
 }
 
 /* 📱 Responsive spacing for mobile */
@@ -160,7 +160,7 @@ st.markdown(
 
     .contact-card p {
         font-size: 1.05rem;
-        margin-bottom: 16px;
+        margin-bottom: 15px;
         color: #333;
     }
 
