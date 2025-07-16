@@ -578,6 +578,8 @@ with tab3:
     # Pre/Post Histograms
     histPre, _ = np.histogram(attsPreN, bins=bins)
     histPost, _ = np.histogram(attsPostN, bins=bins)
+    histPre = histPre / histPre.sum()
+    histPost = histPost / histPost.sum()
 
     # Plot layout
     fig, axs = plt.subplots(1, 3, figsize=(18, 4), gridspec_kw={'width_ratios': [1, 1.2, 1]})
@@ -585,8 +587,8 @@ with tab3:
     # Plot 1: Pre
     axs[0].bar(bin_labels, histPre, color='blue', edgecolor='black')
     axs[0].set_title("Pre Attitudes")
-    axs[0].set_ylabel("User Count")
-    axs[0].set_xlabel("Attitude")
+    axs[0].set_ylabel("P(a)")
+    axs[0].set_xlabel("a")
 
     # Plot 2: Transition Matrix
     sns.heatmap(transition_matrix, annot=True, fmt=".2f", cmap="Blues", ax=axs[1],
@@ -598,7 +600,7 @@ with tab3:
     # Plot 3: Post
     axs[2].bar(bin_labels, histPost, color='red', edgecolor='black')
     axs[2].set_title("Post Attitudes")
-    axs[2].set_xlabel("Attitude")
+    axs[2].set_xlabel("a")
 
     #fig.suptitle("Attitude Shift Overview")
     st.pyplot(fig)
