@@ -583,7 +583,7 @@ with tab3:
     fig, axs = plt.subplots(1, 3, figsize=(18, 4), gridspec_kw={'width_ratios': [1, 1.2, 1]})
 
     # Plot 1: Pre
-    axs[0].bar(bin_labels, histPre, color='skyblue', edgecolor='black')
+    axs[0].bar(bin_labels, histPre, color='blue', edgecolor='black')
     axs[0].set_title("Pre Attitudes")
     axs[0].set_ylabel("User Count")
     axs[0].set_xlabel("Attitude")
@@ -596,7 +596,7 @@ with tab3:
     axs[1].set_ylabel("Pre")
 
     # Plot 3: Post
-    axs[2].bar(bin_labels, histPost, color='salmon', edgecolor='black')
+    axs[2].bar(bin_labels, histPost, color='red', edgecolor='black')
     axs[2].set_title("Post Attitudes")
     axs[2].set_xlabel("Attitude")
 
