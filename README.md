@@ -1,6 +1,6 @@
 # Reddit Opinion Dynamics Explorer
 
-**Reddit Opinion Dynamics Explorer** is a Streamlit-based web app that visualizes and analyzes Reddit discussions from a [real-world field experiment](https://github.com/lfoswald/reddit-discussion-field-experiment). Explore comment tree structures, user participation patterns, and opinion change dynamics.
+**Reddit Opinion Dynamics Explorer** is a Streamlit-based web app that visualizes and analyzes Reddit discussions from a field experiment. Explore comment tree structures, user participation patterns, and opinion change dynamics.
 
 
 https://reddit-field-explorer.streamlit.app/
@@ -31,6 +31,7 @@ The app expects [experimental data](https://osf.io/m8g4x/) in the `data/` folder
 📬 Contact & Feedback
 
 The project was funded by the EU Horizon Project [SoMe4Dem](https://some4dem.eu/) by the European Commission.
+See here for the [Reddit field experiment](https://github.com/lfoswald/reddit-discussion-field-experiment).
 
 We’d love to hear your suggestions or questions:
 
