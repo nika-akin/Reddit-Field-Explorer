@@ -1,13 +1,15 @@
 # Reddit Opinion Dynamics Explorer
 <img width="110" height="110" alt="Bild1" src="https://github.com/user-attachments/assets/161d2497-0234-41c1-9492-b85431441fd8" />
 
+
 **Reddit Opinion Dynamics Explorer** is a Streamlit-based web app that visualizes and analyzes Reddit discussions from a field experiment. Explore comment tree structures, user participation patterns, and opinion change dynamics.
 
 See here for the App:
 https://reddit-field-explorer.streamlit.app/
----
+
 <img width="95" height="92" alt="qr_app" src="https://github.com/user-attachments/assets/4e752768-ad0b-42b8-a35b-57ef995a0aaa" />
 
+---
 ## Features
 
 - **Comment Tree Visualization**  
