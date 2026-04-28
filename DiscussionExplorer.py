@@ -307,9 +307,16 @@ with tab1:
 
             # Create graph
             graph = nx.DiGraph()
-            users_comments = filtered_df_comments['ParticipantID'].unique().astype(str)
-            users_pre = df_pre_survey['ParticipantID'].unique().astype(str)
-            users = np.intersect1d(users_pre,users_comments)
+
+
+            def clean_ids(series):
+                return set(series.dropna().astype(str))
+
+
+            users_comments = clean_ids(filtered_df_comments["ParticipantID"])
+            users_pre = clean_ids(df_pre_survey["ParticipantID"])
+
+            users = list(users_pre & users_comments)
             filtered_df_pre = df_pre_survey[df_pre_survey['ParticipantID'].isin(users)]
 
             for ix, row in filtered_df_comments.iterrows():
