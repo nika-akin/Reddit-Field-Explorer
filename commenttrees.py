@@ -31,12 +31,14 @@ st.markdown(
 # Comment Data:
 @st.cache_data
 def load_data():
-    discussions_path = "../data/discussions_anon.csv"
-    pre_survey_path = "../data/pre_survey_anon.csv"
-    post_survey_path = "../data/post_surveys_anon.csv"
+    discussions_path = "data/discussions_anon.csv"
+    pre_survey_path = "data/pre_survey_anon.csv"
+    post_survey_path = "data/post_surveys_anon.csv"
+
     df_discussions = pd.read_csv(discussions_path)
     df_pre = pd.read_csv(pre_survey_path)
     df_post = pd.read_csv(post_survey_path)
+
     return df_discussions, df_pre, df_post
 
 df_comments, df_pre_survey, df_post_survey = load_data()
@@ -46,7 +48,10 @@ df_comments, df_pre_survey, df_post_survey = load_data()
 users_comments = df_comments['ParticipantID'].unique().astype(str)
 users_pre = df_pre_survey['ParticipantID'].unique().astype(str)
 
-users = np.intersect1d(users_pre,users_comments)
+users_pre = pd.Series(users_pre).dropna().astype(str).tolist()
+users_comments = pd.Series(users_comments).dropna().astype(str).tolist()
+
+users = np.intersect1d(users_pre, users_comments)
 df_pre_all = df_pre_survey[df_pre_survey['ParticipantID'].isin(users)]
 
 subreddits = df_comments['subreddit'].unique()
