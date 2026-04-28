@@ -414,8 +414,21 @@ with tab2:
     attsAct = 2 * (attsAct - 1) / 5 - 1
 
     # All users the participated at some point
-    users_comments = df_comments['ParticipantID'].unique().astype(str)
-    exp_users = np.intersect1d(all_users,users_comments)
+    users_comments = (
+        df_comments["ParticipantID"]
+        .dropna()
+        .astype(str)
+        .unique()
+    )
+
+    all_users = (
+        pd.Series(all_users)
+        .dropna()
+        .astype(str)
+        .unique()
+    )
+
+    exp_users = list(set(all_users) & set(users_comments))
     filtered_df_pre_exp = filtered_df_pre[filtered_df_pre['ParticipantID'].isin(exp_users)]
     attsExp = filtered_df_pre_exp[ topics_survey[tx] ]
     attsExp = 2 * (attsExp - 1) / 5 - 1
