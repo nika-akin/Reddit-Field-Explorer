@@ -358,19 +358,29 @@ with tab1:
             net = Network(height="600px", width="100%", directed=True, bgcolor="#ffffff", font_color="black")
 
             # Check if graph has nodes and edges
+            # Check if graph has nodes and edges
             if graph.nodes:
-                net.from_nx(graph)
-                
-                with tempfile.NamedTemporaryFile('w+', delete=False, suffix='.html') as tmp_file:
-                  net.save_graph(tmp_file.name)
-                  tmp_file.seek(0)
-                  html_content = tmp_file.read()
 
-                # Display graph
+                # 🔧 CLEAN NODE ATTRIBUTES BEFORE PYVIS
+                for node in graph.nodes:
+                    size = graph.nodes[node].get("size", 1)
+
+                    # handle NaN / None / invalid values
+                    if pd.isna(size) or size is None or size <= 0:
+                        size = 1
+
+                    graph.nodes[node]["size"] = float(size)
+
+                net.from_nx(graph)
+
+                with tempfile.NamedTemporaryFile('w+', delete=False, suffix='.html') as tmp_file:
+                    net.save_graph(tmp_file.name)
+                    tmp_file.seek(0)
+                    html_content = tmp_file.read()
+
                 components.html(html_content, height=650, scrolling=True)
                 os.remove(tmp_file.name)
 
-                    
             else:
                 st.write(f"No graph generated for {selected_topic}.")
 
