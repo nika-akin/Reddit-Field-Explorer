@@ -45,15 +45,26 @@ df_comments, df_pre_survey, df_post_survey = load_data()
 
 
 # Extract users, topics and subreddits
-users_comments = df_comments['ParticipantID'].unique().astype(str)
-users_pre = df_pre_survey['ParticipantID'].unique().astype(str)
+# Clean + normalize directly from pandas
+users_comments = (
+    df_comments["ParticipantID"]
+    .dropna()
+    .astype(str)
+    .unique()
+)
 
-users_pre = pd.Series(users_pre).dropna().astype(str).tolist()
-users_comments = pd.Series(users_comments).dropna().astype(str).tolist()
+users_pre = (
+    df_pre_survey["ParticipantID"]
+    .dropna()
+    .astype(str)
+    .unique()
+)
 
-users = np.intersect1d(users_pre, users_comments)
-df_pre_all = df_pre_survey[df_pre_survey['ParticipantID'].isin(users)]
-
+# Use Python sets (robust + fast)
+users = list(set(users_pre) & set(users_comments))
+df_pre_all = df_pre_survey[
+    df_pre_survey["ParticipantID"].astype(str).isin(users)
+]
 subreddits = df_comments['subreddit'].unique()
 topics = df_comments['post_title'].unique()
 # Get associated survey topics in right order
